@@ -1,0 +1,21 @@
+#landing {
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.208), rgba(0.5, 0.5, 0.5, 0.5)),url('http://wallpapersdsc.net/wp-content/uploads/2016/09/Quebec-City-Wallpapers-HD.jpg');
+    /* background-image: url('http://wallpapersdsc.net/wp-content/uploads/2016/09/Quebec-City-Wallpapers-HD.jpg'); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.main-box {
+    margin-left: 10%;
+    padding-top: 10%;
+}
+
+.title {
+    color: white;
+}
+
+.start-btn {
+    text-transform: uppercase;
+}
