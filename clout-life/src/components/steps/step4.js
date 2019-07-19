@@ -3,6 +3,14 @@ import {connect} from 'react-redux'
 
 class Step4 extends Component {
 
+    handleChange = (e) => {
+        let input = e.target.value
+        if (input === 'No Preference') {
+            input = 'NA'
+        }
+        this.props.dispatch({type: "WEATHER", value: input})
+    }
+
     next = (e) => {
         e.preventDefault();
         this.props.dispatch({type: "UP_STEP"})
@@ -22,7 +30,7 @@ class Step4 extends Component {
                 <div>
                 <div className="form-group">
                     <label>Prefered weather condition:</label>
-                    <select className="form-control" id="exampleFormControlSelect1">
+                    <select onChange={e => this.handleChange(e)} className="form-control" id="exampleFormControlSelect1">
                         <option>No Preference</option>
                         <option>Warm</option>
                         <option>Average</option>

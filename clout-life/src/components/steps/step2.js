@@ -3,6 +3,11 @@ import {connect} from 'react-redux'
 
 class Step2 extends Component {
 
+    handleChange = (e) => {
+        console.log(e.target.value)
+        this.props.dispatch({type: "INDUSTRY", value: e.target.value})
+    }
+
     next = (e) => {
         e.preventDefault();
         this.props.dispatch({type: "UP_STEP"})
@@ -22,12 +27,19 @@ class Step2 extends Component {
                 <div>
                     <div className="form-group">
                     <label>Select your industry:</label>
-                    <select className="form-control" id="exampleFormControlSelect1">
+                    <select onChange={e => this.handleChange(e)} className="form-control" id="exampleFormControlSelect1">
+                        <option>Oil, Gas and Mining</option>
+                        <option>Manufacturing</option>
+                        <option>Agriculture</option>
                         <option>Education</option>
-                        <option>IT</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                        <option>Government</option>
+                        <option>Information Technology</option>
+                        <option>Retail</option>
+                        <option>Real estate</option>
+                        <option>Hospitality</option>
+                        <option>Healthcare</option>
+                        <option>Entertainment</option>
+                        <option>Construction</option>
                     </select>
                     </div>
                     <button onClick={this.back} className="btn btn-primary">Back</button>

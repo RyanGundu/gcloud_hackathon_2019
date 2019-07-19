@@ -10,7 +10,8 @@ const initialState = {
     step: 0,
     fName: '',
     lName: '',
-    industry: 'Education',
+    age: 0,
+    industry: 'Oil, Gas and Mining',
     costOfLiving: 0,
     weather: 'NA',
     populationDensity: 'NA'
@@ -22,18 +23,24 @@ function reducer(state=initialState, action) {
             return { ...state, step: state.step + 1};
         case "DOWN_STEP":
             return { ...state, step: state.step - 1};
+        case "RESET_STEP":
+            return { ...state, step: 0};
         case "F_NAME":
-            return { ...state, fName: state.fName};
+            return { ...state, fName: action.value};
         case "L_NAME":
-            return { ...state, fName: state.lName};
+            return { ...state, lName: action.value};
+        case "AGE":
+            return { ...state, age: action.value};
         case "INDUSTRY":
-            return { ...state, fName: state.lName};
+            return { ...state, industry: action.value};
         case "COL":
-            return { ...state, fName: state.costOfLiving};
+            return { ...state, costOfLiving: action.value};
         case "WEATHER":
-            return { ...state, fName: state.weather};
+            return { ...state, weather: action.value};
         case "P_DENSITY":
-            return { ...state, fName: state.weather};
+            return { ...state, populationDensity: action.value};
+        case "RESET_ALL":
+            return initialState;
         default:
             return state;
     }
